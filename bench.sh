@@ -23,6 +23,12 @@ if [ $(ollama ps | wc -l) -gt 1 ]; then
 	exit 1
 fi
 
+if [ command -v nvidia-smi &> /dev/null ]; then
+	echo "Nvidia-smi is not supported yet" >&2
+	echo "The commands need fixed by someone with an nvidia card." >&2
+	exit 1
+fi
+
 
 function bench1() {
 	# Clean model name for filename by replacing ':' with '-'

@@ -10,6 +10,12 @@ starts spilling over into system RAM.
 Refer to our [blog post comparing and tuning AI models with this script](https://bitsnbytes.dev/posts/2026-10/comparison-and-tuning-local-ai.html)
 for a writeup on how to interpret the results.
 
+## NVidia Support
+
+NVidia cards are **NOT** supported at the moment.
+If you have an nvidia card and would like to help, feel free to submit a PR
+with the fixed `nvidia-smi` commands herein.
+
 ## What it does
 
 For each model, [`bench.sh`](bench.sh) does the following:
@@ -114,7 +120,7 @@ Memory used: 6.3GiB
 
 ## Requirements
 
-- Linux with an NVIDIA or AMD GPU
+- Linux with an ~~NVIDIA~~ or AMD GPU
 - [Ollama](https://ollama.com) with at least one model pulled
 - `jq`, `curl`
 - `nvidia-smi` (NVIDIA) or `rocm-smi` (AMD)
